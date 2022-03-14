@@ -85,11 +85,11 @@ namespace Repaso2
         {            
             CargarClientes();
             CargarVehiculos();
-            dataGridViewVehiculos.DataSource = vehiculos;
-            dataGridViewVehiculos.Refresh();
+            //dataGridViewVehiculos.DataSource = vehiculos;
+            //dataGridViewVehiculos.Refresh();
             CargarAlquileres();
-            dataGridViewAlquileres.DataSource = alquileres;
-            dataGridViewAlquileres.Refresh();
+            //dataGridViewAlquileres.DataSource = alquileres;
+            //dataGridViewAlquileres.Refresh();
         }
 
         private void buttonAlquileres_Click(object sender, EventArgs e)
