@@ -220,9 +220,13 @@ namespace Repaso2
 
         private void buttonReporte_Click(object sender, EventArgs e)
         {
+            //Un cilo que recorra todos los alquileres
             foreach (var alquiler in alquileres)
             {
                 Reporte reporte = new Reporte();
+
+                //Por cada alquiler que se lee, hay que buscar entre los clientes
+                //quien tiene el NIT que alquilo, para encontrar su Nombre
                 foreach(var cliente in clientes)
                 {
                     if (alquiler.Nit == cliente.Nit)
@@ -230,6 +234,9 @@ namespace Repaso2
                         reporte.Nombre = cliente.Nombre;
                     }
                 }
+                //Por cada alquiler que se lee, hay que buscar entre los vehículos
+                //quien tiene la Placa del vehículo que se alquilo, para encontra
+                //los datos de ese vehículo
                 foreach (var vehiculo in vehiculos)
                 {
                     if (alquiler.Placa == vehiculo.Placa)
@@ -239,12 +246,16 @@ namespace Repaso2
 
                         reporte.FechaDevolucion = alquiler.FechaDevolucion;
 
-                        decimal Total = vehiculo.PrecioKm *
-                            alquiler.Kilometros;
+                        //Aquí se calcula el Total a pagar
+                        //El precio por vehículo esta en el Vehículo
+                        //y los kilometros recorridos estan en el Alquiler
+                        decimal Total = vehiculo.PrecioKm *alquiler.Kilometros;
 
                         reporte.TotalPagar = Total;
                     }
                 }
+                //Cada dato que se encontró se guardo en reporte
+                //Entonces guardamos ese reporte en la lista de reportes
                 reportes.Add(reporte);
             }
             MostrarReporte();
