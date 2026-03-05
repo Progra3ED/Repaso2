@@ -60,6 +60,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
             this.buttonReporte = new System.Windows.Forms.Button();
+            this.buttonMasKilometros = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
@@ -93,7 +94,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(943, 615);
+            this.tabPage1.Size = new System.Drawing.Size(943, 606);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -365,6 +366,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.buttonMasKilometros);
             this.tabPage4.Controls.Add(this.buttonReporte);
             this.tabPage4.Controls.Add(this.dataGridViewReporte);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -384,13 +386,23 @@
             // 
             // buttonReporte
             // 
-            this.buttonReporte.Location = new System.Drawing.Point(403, 507);
+            this.buttonReporte.Location = new System.Drawing.Point(197, 505);
             this.buttonReporte.Name = "buttonReporte";
             this.buttonReporte.Size = new System.Drawing.Size(221, 66);
             this.buttonReporte.TabIndex = 1;
             this.buttonReporte.Text = "Ver Reporte";
             this.buttonReporte.UseVisualStyleBackColor = true;
             this.buttonReporte.Click += new System.EventHandler(this.buttonReporte_Click);
+            // 
+            // buttonMasKilometros
+            // 
+            this.buttonMasKilometros.Location = new System.Drawing.Point(496, 505);
+            this.buttonMasKilometros.Name = "buttonMasKilometros";
+            this.buttonMasKilometros.Size = new System.Drawing.Size(204, 66);
+            this.buttonMasKilometros.TabIndex = 2;
+            this.buttonMasKilometros.Text = "Mas Kilometros";
+            this.buttonMasKilometros.UseVisualStyleBackColor = true;
+            this.buttonMasKilometros.Click += new System.EventHandler(this.buttonMasKilometros_Click);
             // 
             // Form1
             // 
@@ -453,6 +465,7 @@
         private System.Windows.Forms.Button buttonGuardarAlquiler;
         private System.Windows.Forms.Button buttonReporte;
         private System.Windows.Forms.DataGridView dataGridViewReporte;
+        private System.Windows.Forms.Button buttonMasKilometros;
     }
 }
 

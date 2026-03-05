@@ -260,5 +260,20 @@ namespace Repaso2
             }
             MostrarReporte();
         }
+
+        private void buttonMasKilometros_Click(object sender, EventArgs e)
+        {
+            Alquiler alquiler = new Alquiler();
+
+            //Para encontrar el alquiler con más kilometros recorridos
+            //Primero se ordena la lista de alquileres descendentemente con base a los kilometros
+            //luego se obtiene el primer dato de la lista ordenada First()
+            
+            alquiler = alquileres.OrderByDescending(a => a.Kilometros).First();
+
+            MessageBox.Show("El vehículo:" + alquiler.Placa 
+                             + " recorrió " 
+                             + alquiler.Kilometros);
+        }
     }
 }
