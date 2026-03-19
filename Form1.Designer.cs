@@ -58,9 +58,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewAlquileres = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
-            this.buttonReporte = new System.Windows.Forms.Button();
             this.buttonMasKilometros = new System.Windows.Forms.Button();
+            this.buttonReporte = new System.Windows.Forms.Button();
+            this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
@@ -125,7 +125,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(943, 615);
+            this.tabPage2.Size = new System.Drawing.Size(943, 606);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vehiculos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -264,6 +264,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Alquileres";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // buttonGuardarAlquiler
             // 
@@ -376,13 +377,15 @@
             this.tabPage4.Text = "Reportes";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewReporte
+            // buttonMasKilometros
             // 
-            this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReporte.Location = new System.Drawing.Point(148, 43);
-            this.dataGridViewReporte.Name = "dataGridViewReporte";
-            this.dataGridViewReporte.Size = new System.Drawing.Size(655, 433);
-            this.dataGridViewReporte.TabIndex = 0;
+            this.buttonMasKilometros.Location = new System.Drawing.Point(496, 505);
+            this.buttonMasKilometros.Name = "buttonMasKilometros";
+            this.buttonMasKilometros.Size = new System.Drawing.Size(204, 66);
+            this.buttonMasKilometros.TabIndex = 2;
+            this.buttonMasKilometros.Text = "Mas Kilometros";
+            this.buttonMasKilometros.UseVisualStyleBackColor = true;
+            this.buttonMasKilometros.Click += new System.EventHandler(this.buttonMasKilometros_Click);
             // 
             // buttonReporte
             // 
@@ -394,15 +397,13 @@
             this.buttonReporte.UseVisualStyleBackColor = true;
             this.buttonReporte.Click += new System.EventHandler(this.buttonReporte_Click);
             // 
-            // buttonMasKilometros
+            // dataGridViewReporte
             // 
-            this.buttonMasKilometros.Location = new System.Drawing.Point(496, 505);
-            this.buttonMasKilometros.Name = "buttonMasKilometros";
-            this.buttonMasKilometros.Size = new System.Drawing.Size(204, 66);
-            this.buttonMasKilometros.TabIndex = 2;
-            this.buttonMasKilometros.Text = "Mas Kilometros";
-            this.buttonMasKilometros.UseVisualStyleBackColor = true;
-            this.buttonMasKilometros.Click += new System.EventHandler(this.buttonMasKilometros_Click);
+            this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReporte.Location = new System.Drawing.Point(148, 43);
+            this.dataGridViewReporte.Name = "dataGridViewReporte";
+            this.dataGridViewReporte.Size = new System.Drawing.Size(655, 433);
+            this.dataGridViewReporte.TabIndex = 0;
             // 
             // Form1
             // 

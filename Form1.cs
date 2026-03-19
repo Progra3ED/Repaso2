@@ -17,11 +17,11 @@ namespace Repaso2
         List<Cliente> clientes = new List<Cliente>();
         List<Vehiculo> vehiculos = new List<Vehiculo>();
         List<Alquiler> alquileres = new List<Alquiler>();
-        List<Reporte> reportes = new List<Reporte>();   
+        List<Reporte> reportes = new List<Reporte>();
 
-        const string fileVehiculos = @"Vehiculos.txt";
-        const string fileClientes = @"Clientes.txt";
-        const string fileAlquileres = @"Alquieleres.txt";
+        VehiculoPersistencia vehiculoPersistencia = new VehiculoPersistencia();
+        ClientePersistencia clientePersistencia = new ClientePersistencia();
+        AlquilerPersistencia alquilerPersistencia = new AlquilerPersistencia();
 
         public Form1()
         {
@@ -35,51 +35,16 @@ namespace Repaso2
         
         }
 
-        private void LeerCliente()
-        {
-            
-            FileStream stream = new FileStream(fileClientes, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(stream);
-
-
-            while (reader.Peek() > -1)
-            {
-                Cliente cliente = new Cliente();
-                cliente.Nit = reader.ReadLine();
-                cliente.Nombre = reader.ReadLine();
-                cliente.Direccion = reader.ReadLine();
-
-                clientes.Add(cliente);
-
-            }
-
-            reader.Close();
-        }
+        
 
         private void tabPage1_Click(object sender, EventArgs e)
-        {
-            LeerCliente();
+        {            
+            clientes = clientePersistencia.LeerTxt();
+            //LeerCliente();
             MostrarClientes();
         }
 
-        private void GuardarVehiculo()
-        {
-            FileStream stream = new FileStream(fileVehiculos, FileMode.OpenOrCreate, FileAccess.Write);            
-            StreamWriter writer = new StreamWriter(stream);
-
-            foreach (var vehiculo in vehiculos)
-            {
-                writer.WriteLine(vehiculo.Placa);
-                writer.WriteLine(vehiculo.Marca);
-                writer.WriteLine(vehiculo.Modelo);
-                writer.WriteLine(vehiculo.Color);
-                writer.WriteLine(vehiculo.PrecioKm);
-
-            }
-                                    
-            writer.Close();
-
-        }
+        
 
         private void MostrarVehiculo()
         {
@@ -88,31 +53,7 @@ namespace Repaso2
         
         }
 
-        private void LeerVehiculo()
-        {            
-
-            if (File.Exists(fileVehiculos))
-            {
-                FileStream stream = new FileStream(fileVehiculos, FileMode.Open, FileAccess.Read);
-                StreamReader reader = new StreamReader(stream);
-
-
-                while (reader.Peek() > -1)
-                {
-                    Vehiculo vehiculo = new Vehiculo();
-                    vehiculo.Placa = reader.ReadLine();
-                    vehiculo.Marca = reader.ReadLine();
-                    vehiculo.Modelo = Convert.ToInt16(reader.ReadLine());
-                    vehiculo.Color = reader.ReadLine();
-                    vehiculo.PrecioKm = Convert.ToDecimal(reader.ReadLine());
-
-                    vehiculos.Add(vehiculo);
-                }
-
-                reader.Close();
-            }
-
-        }
+        
         private void buttonGuardarVehiculo_Click(object sender, EventArgs e)
         {
             Vehiculo vehiculo = new Vehiculo();
@@ -125,38 +66,29 @@ namespace Repaso2
 
             vehiculos.Add(vehiculo);
 
-            GuardarVehiculo();
+            
+            vehiculoPersistencia.GuardarTxt(vehiculos);
+            //GuardarVehiculo();
 
             MostrarVehiculo();
             
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            LeerCliente();
-            LeerVehiculo();
-            LeerAlquiler();
+        {            
+            clientePersistencia.LeerTxt();         
+            vehiculoPersistencia.LeerTxt();
+            //LeerVehiculo();
+
+            alquilerPersistencia.LeerTxt();
+            //LeerAlquiler();
 
             MostrarClientes();
             MostrarVehiculo();
             MostrarAlquiler();
         }
 
-        private void GuardarAlquiler()
-        {
-            FileStream stream = new FileStream(fileAlquileres, FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(stream);
-            foreach (var alquiler in alquileres)
-            {
-                writer.WriteLine(alquiler.Nit);
-                writer.WriteLine(alquiler.Placa);
-                writer.WriteLine(alquiler.FechaAlquiler);
-                writer.WriteLine(alquiler.FechaDevolucion);
-                writer.WriteLine(alquiler.Kilometros);
-            }
-            writer.Close();
         
-        }
 
         private void MostrarAlquiler()
         {
@@ -164,28 +96,7 @@ namespace Repaso2
             dataGridViewAlquileres.DataSource = alquileres;
         }
 
-        private void LeerAlquiler()
-        {
-            if (File.Exists(fileAlquileres))
-            {
-                FileStream stream = new FileStream(fileAlquileres, FileMode.Open, FileAccess.Read);
-                StreamReader reader = new StreamReader(stream);
-
-                while (reader.Peek() > -1)
-                {
-                    Alquiler alquiler = new Alquiler();
-                    alquiler.Nit = reader.ReadLine();
-                    alquiler.Placa = reader.ReadLine();
-                    alquiler.FechaAlquiler = Convert.ToDateTime(reader.ReadLine());
-                    alquiler.FechaDevolucion = Convert.ToDateTime(reader.ReadLine());
-                    alquiler.Kilometros = Convert.ToInt16(reader.ReadLine());
-
-                    alquileres.Add(alquiler);
-
-                }
-                reader.Close();
-            }
-        }
+        
 
         private void buttonGuardarAlquiler_Click(object sender, EventArgs e)
         {
@@ -198,7 +109,8 @@ namespace Repaso2
 
             alquileres.Add(alquiler);
 
-            GuardarAlquiler();
+            alquilerPersistencia.GuardarTxt(alquileres);
+            //GuardarAlquiler();
             MostrarAlquiler();
         }
 
@@ -274,6 +186,11 @@ namespace Repaso2
             MessageBox.Show("El vehículo:" + alquiler.Placa 
                              + " recorrió " 
                              + alquiler.Kilometros);
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
