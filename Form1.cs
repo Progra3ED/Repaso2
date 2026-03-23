@@ -192,5 +192,30 @@ namespace Repaso2
         {
 
         }
+
+        private void buttonJson_Click(object sender, EventArgs e)
+        {
+                        
+            Alquiler alquiler = new Alquiler();
+            alquiler.Nit = textBoxNit.Text;
+            alquiler.Placa = comboBoxPlaca.Text;
+            alquiler.FechaAlquiler = dateTimePickerInicio.Value;
+            alquiler.FechaDevolucion = dateTimePickerFinal.Value;
+            alquiler.Kilometros = (int)numericUpDownKilometros.Value;
+
+            alquileres.Add(alquiler);
+
+
+            AlquilerPersistencia persistencia = new AlquilerPersistencia();
+            persistencia.GuardarJson(alquileres);
+
+        }
+
+        private void buttonLeerJson_Click(object sender, EventArgs e)
+        {
+            AlquilerPersistencia persistencia = new AlquilerPersistencia();
+            alquileres = persistencia.LeerJson();
+            MostrarAlquiler();
+        }
     }
 }

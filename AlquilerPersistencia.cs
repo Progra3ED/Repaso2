@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Repaso2
     internal class AlquilerPersistencia
     {
         string fileAlquileres = "Alquileres.txt";
+        string fileAlquileresJson = "Alquileres.json";
 
         public void GuardarTxt(List<Alquiler> alquileres)
         {
@@ -47,6 +49,19 @@ namespace Repaso2
                 reader.Close();
             }
             return alquileres;
+        }
+
+        public List<Alquiler> LeerJson()
+        {            
+            List<Alquiler> alquileres = new List<Alquiler>();
+            string jsonString = File.ReadAllText(fileAlquileresJson);            
+            alquileres = JsonConvert.DeserializeObject<List<Alquiler>>(jsonString);
+            return alquileres;
+        }
+        public void GuardarJson(List<Alquiler> alquileres)
+        {
+            string jsonString = JsonConvert.SerializeObject(alquileres);
+            File.WriteAllText(fileAlquileresJson, jsonString);
         }
     }
 }

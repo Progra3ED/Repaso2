@@ -61,6 +61,8 @@
             this.buttonMasKilometros = new System.Windows.Forms.Button();
             this.buttonReporte = new System.Windows.Forms.Button();
             this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
+            this.buttonJson = new System.Windows.Forms.Button();
+            this.buttonLeerJson = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
@@ -246,6 +248,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.buttonLeerJson);
+            this.tabPage3.Controls.Add(this.buttonJson);
             this.tabPage3.Controls.Add(this.buttonGuardarAlquiler);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.numericUpDownKilometros);
@@ -405,6 +409,26 @@
             this.dataGridViewReporte.Size = new System.Drawing.Size(655, 433);
             this.dataGridViewReporte.TabIndex = 0;
             // 
+            // buttonJson
+            // 
+            this.buttonJson.Location = new System.Drawing.Point(446, 446);
+            this.buttonJson.Name = "buttonJson";
+            this.buttonJson.Size = new System.Drawing.Size(211, 57);
+            this.buttonJson.TabIndex = 12;
+            this.buttonJson.Text = "Guardar Json";
+            this.buttonJson.UseVisualStyleBackColor = true;
+            this.buttonJson.Click += new System.EventHandler(this.buttonJson_Click);
+            // 
+            // buttonLeerJson
+            // 
+            this.buttonLeerJson.Location = new System.Drawing.Point(705, 446);
+            this.buttonLeerJson.Name = "buttonLeerJson";
+            this.buttonLeerJson.Size = new System.Drawing.Size(175, 57);
+            this.buttonLeerJson.TabIndex = 13;
+            this.buttonLeerJson.Text = "Leer Json";
+            this.buttonLeerJson.UseVisualStyleBackColor = true;
+            this.buttonLeerJson.Click += new System.EventHandler(this.buttonLeerJson_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +491,8 @@
         private System.Windows.Forms.Button buttonReporte;
         private System.Windows.Forms.DataGridView dataGridViewReporte;
         private System.Windows.Forms.Button buttonMasKilometros;
+        private System.Windows.Forms.Button buttonJson;
+        private System.Windows.Forms.Button buttonLeerJson;
     }
 }
 
