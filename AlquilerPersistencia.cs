@@ -15,7 +15,7 @@ namespace Repaso2
 
         public void GuardarTxt(List<Alquiler> alquileres)
         {
-            FileStream stream = new FileStream(fileAlquileres, FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream stream = new FileStream(fileAlquileres, FileMode.Create, FileAccess.Write);
             StreamWriter writer = new StreamWriter(stream);
             foreach (var alquiler in alquileres)
             {

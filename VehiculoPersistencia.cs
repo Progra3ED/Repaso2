@@ -14,7 +14,7 @@ namespace Repaso2
 
         public void GuardarTxt(List<Vehiculo> vehiculos)
         {
-            FileStream stream = new FileStream(fileVehiculos, FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream stream = new FileStream(fileVehiculos, FileMode.Create, FileAccess.Write);
             StreamWriter writer = new StreamWriter(stream);
 
             foreach (var vehiculo in vehiculos)

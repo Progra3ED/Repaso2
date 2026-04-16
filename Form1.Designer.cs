@@ -1,6 +1,6 @@
-﻿namespace Repaso2
+namespace Repaso2
 {
-    partial class Form1
+    public partial class Form1
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -63,6 +63,19 @@
             this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
             this.buttonJson = new System.Windows.Forms.Button();
             this.buttonLeerJson = new System.Windows.Forms.Button();
+            this.labelNitCliente = new System.Windows.Forms.Label();
+            this.textBoxNitCliente = new System.Windows.Forms.TextBox();
+            this.labelNombreCliente = new System.Windows.Forms.Label();
+            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
+            this.labelDireccionCliente = new System.Windows.Forms.Label();
+            this.textBoxDireccionCliente = new System.Windows.Forms.TextBox();
+            this.labelEmailCliente = new System.Windows.Forms.Label();
+            this.textBoxEmailCliente = new System.Windows.Forms.TextBox();
+            this.labelUsuarioCliente = new System.Windows.Forms.Label();
+            this.textBoxUsuarioCliente = new System.Windows.Forms.TextBox();
+            this.labelPasswordCliente = new System.Windows.Forms.Label();
+            this.textBoxPasswordCliente = new System.Windows.Forms.TextBox();
+            this.buttonGuardarCliente = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
@@ -92,6 +105,19 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.labelPasswordCliente);
+            this.tabPage1.Controls.Add(this.textBoxPasswordCliente);
+            this.tabPage1.Controls.Add(this.labelUsuarioCliente);
+            this.tabPage1.Controls.Add(this.textBoxUsuarioCliente);
+            this.tabPage1.Controls.Add(this.labelEmailCliente);
+            this.tabPage1.Controls.Add(this.textBoxEmailCliente);
+            this.tabPage1.Controls.Add(this.labelDireccionCliente);
+            this.tabPage1.Controls.Add(this.textBoxDireccionCliente);
+            this.tabPage1.Controls.Add(this.labelNombreCliente);
+            this.tabPage1.Controls.Add(this.textBoxNombreCliente);
+            this.tabPage1.Controls.Add(this.labelNitCliente);
+            this.tabPage1.Controls.Add(this.textBoxNitCliente);
+            this.tabPage1.Controls.Add(this.buttonGuardarCliente);
             this.tabPage1.Controls.Add(this.dataGridViewClientes);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -102,12 +128,119 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // labelPasswordCliente
+            // 
+            this.labelPasswordCliente.AutoSize = true;
+            this.labelPasswordCliente.Location = new System.Drawing.Point(20, 230);
+            this.labelPasswordCliente.Name = "labelPasswordCliente";
+            this.labelPasswordCliente.Size = new System.Drawing.Size(53, 13);
+            this.labelPasswordCliente.TabIndex = 13;
+            this.labelPasswordCliente.Text = "Password";
+            // 
+            // textBoxPasswordCliente
+            // 
+            this.textBoxPasswordCliente.Location = new System.Drawing.Point(100, 227);
+            this.textBoxPasswordCliente.Name = "textBoxPasswordCliente";
+            this.textBoxPasswordCliente.PasswordChar = '*';
+            this.textBoxPasswordCliente.Size = new System.Drawing.Size(200, 20);
+            this.textBoxPasswordCliente.TabIndex = 12;
+            // 
+            // labelUsuarioCliente
+            // 
+            this.labelUsuarioCliente.AutoSize = true;
+            this.labelUsuarioCliente.Location = new System.Drawing.Point(20, 190);
+            this.labelUsuarioCliente.Name = "labelUsuarioCliente";
+            this.labelUsuarioCliente.Size = new System.Drawing.Size(43, 13);
+            this.labelUsuarioCliente.TabIndex = 11;
+            this.labelUsuarioCliente.Text = "Usuario";
+            // 
+            // textBoxUsuarioCliente
+            // 
+            this.textBoxUsuarioCliente.Location = new System.Drawing.Point(100, 187);
+            this.textBoxUsuarioCliente.Name = "textBoxUsuarioCliente";
+            this.textBoxUsuarioCliente.Size = new System.Drawing.Size(200, 20);
+            this.textBoxUsuarioCliente.TabIndex = 10;
+            // 
+            // labelEmailCliente
+            // 
+            this.labelEmailCliente.AutoSize = true;
+            this.labelEmailCliente.Location = new System.Drawing.Point(20, 150);
+            this.labelEmailCliente.Name = "labelEmailCliente";
+            this.labelEmailCliente.Size = new System.Drawing.Size(32, 13);
+            this.labelEmailCliente.TabIndex = 9;
+            this.labelEmailCliente.Text = "Email";
+            // 
+            // textBoxEmailCliente
+            // 
+            this.textBoxEmailCliente.Location = new System.Drawing.Point(100, 147);
+            this.textBoxEmailCliente.Name = "textBoxEmailCliente";
+            this.textBoxEmailCliente.Size = new System.Drawing.Size(200, 20);
+            this.textBoxEmailCliente.TabIndex = 8;
+            // 
+            // labelDireccionCliente
+            // 
+            this.labelDireccionCliente.AutoSize = true;
+            this.labelDireccionCliente.Location = new System.Drawing.Point(20, 110);
+            this.labelDireccionCliente.Name = "labelDireccionCliente";
+            this.labelDireccionCliente.Size = new System.Drawing.Size(52, 13);
+            this.labelDireccionCliente.TabIndex = 7;
+            this.labelDireccionCliente.Text = "Direccion";
+            // 
+            // textBoxDireccionCliente
+            // 
+            this.textBoxDireccionCliente.Location = new System.Drawing.Point(100, 107);
+            this.textBoxDireccionCliente.Name = "textBoxDireccionCliente";
+            this.textBoxDireccionCliente.Size = new System.Drawing.Size(200, 20);
+            this.textBoxDireccionCliente.TabIndex = 6;
+            // 
+            // labelNombreCliente
+            // 
+            this.labelNombreCliente.AutoSize = true;
+            this.labelNombreCliente.Location = new System.Drawing.Point(20, 70);
+            this.labelNombreCliente.Name = "labelNombreCliente";
+            this.labelNombreCliente.Size = new System.Drawing.Size(44, 13);
+            this.labelNombreCliente.TabIndex = 5;
+            this.labelNombreCliente.Text = "Nombre";
+            // 
+            // textBoxNombreCliente
+            // 
+            this.textBoxNombreCliente.Location = new System.Drawing.Point(100, 67);
+            this.textBoxNombreCliente.Name = "textBoxNombreCliente";
+            this.textBoxNombreCliente.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNombreCliente.TabIndex = 4;
+            // 
+            // labelNitCliente
+            // 
+            this.labelNitCliente.AutoSize = true;
+            this.labelNitCliente.Location = new System.Drawing.Point(20, 30);
+            this.labelNitCliente.Name = "labelNitCliente";
+            this.labelNitCliente.Size = new System.Drawing.Size(22, 13);
+            this.labelNitCliente.TabIndex = 3;
+            this.labelNitCliente.Text = "Nit";
+            // 
+            // textBoxNitCliente
+            // 
+            this.textBoxNitCliente.Location = new System.Drawing.Point(100, 27);
+            this.textBoxNitCliente.Name = "textBoxNitCliente";
+            this.textBoxNitCliente.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNitCliente.TabIndex = 2;
+            // 
+            // buttonGuardarCliente
+            // 
+            this.buttonGuardarCliente.Location = new System.Drawing.Point(100, 270);
+            this.buttonGuardarCliente.Name = "buttonGuardarCliente";
+            this.buttonGuardarCliente.Size = new System.Drawing.Size(120, 40);
+            this.buttonGuardarCliente.TabIndex = 1;
+            this.buttonGuardarCliente.Text = "Guardar Cliente";
+            this.buttonGuardarCliente.UseVisualStyleBackColor = true;
+            this.buttonGuardarCliente.Click += new System.EventHandler(this.buttonGuardarCliente_Click);
+            // 
             // dataGridViewClientes
             // 
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(142, 82);
+            this.dataGridViewClientes.Location = new System.Drawing.Point(350, 27);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.Size = new System.Drawing.Size(669, 309);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(569, 509);
             this.dataGridViewClientes.TabIndex = 0;
             // 
             // tabPage2
@@ -493,6 +626,18 @@
         private System.Windows.Forms.Button buttonMasKilometros;
         private System.Windows.Forms.Button buttonJson;
         private System.Windows.Forms.Button buttonLeerJson;
+        private System.Windows.Forms.Label labelPasswordCliente;
+        private System.Windows.Forms.TextBox textBoxPasswordCliente;
+        private System.Windows.Forms.Label labelUsuarioCliente;
+        private System.Windows.Forms.TextBox textBoxUsuarioCliente;
+        private System.Windows.Forms.Label labelEmailCliente;
+        private System.Windows.Forms.TextBox textBoxEmailCliente;
+        private System.Windows.Forms.Label labelDireccionCliente;
+        private System.Windows.Forms.TextBox textBoxDireccionCliente;
+        private System.Windows.Forms.Label labelNombreCliente;
+        private System.Windows.Forms.TextBox textBoxNombreCliente;
+        private System.Windows.Forms.Label labelNitCliente;
+        private System.Windows.Forms.TextBox textBoxNitCliente;
+        private System.Windows.Forms.Button buttonGuardarCliente;
     }
 }
-

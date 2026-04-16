@@ -76,12 +76,9 @@ namespace Repaso2
 
         private void Form1_Load(object sender, EventArgs e)
         {            
-            clientePersistencia.LeerTxt();         
-            vehiculoPersistencia.LeerTxt();
-            //LeerVehiculo();
-
-            alquilerPersistencia.LeerTxt();
-            //LeerAlquiler();
+            clientes = clientePersistencia.LeerTxt();         
+            vehiculos = vehiculoPersistencia.LeerTxt();
+            alquileres = alquilerPersistencia.LeerTxt();
 
             MostrarClientes();
             MostrarVehiculo();
@@ -216,6 +213,29 @@ namespace Repaso2
             AlquilerPersistencia persistencia = new AlquilerPersistencia();
             alquileres = persistencia.LeerJson();
             MostrarAlquiler();
+        }
+
+        private void buttonGuardarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente nuevoCliente = new Cliente();
+            nuevoCliente.Nit = textBoxNitCliente.Text;
+            nuevoCliente.Nombre = textBoxNombreCliente.Text;
+            nuevoCliente.Direccion = textBoxDireccionCliente.Text;
+            nuevoCliente.Email = textBoxEmailCliente.Text;
+            nuevoCliente.Usuario = textBoxUsuarioCliente.Text;
+            nuevoCliente.Password = textBoxPasswordCliente.Text;
+
+            clientes.Add(nuevoCliente);
+            clientePersistencia.GuardarTxt(clientes);
+            MostrarClientes();
+
+            // Limpiar campos
+            textBoxNitCliente.Clear();
+            textBoxNombreCliente.Clear();
+            textBoxDireccionCliente.Clear();
+            textBoxEmailCliente.Clear();
+            textBoxUsuarioCliente.Clear();
+            textBoxPasswordCliente.Clear();
         }
     }
 }

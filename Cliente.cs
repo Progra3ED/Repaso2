@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repaso2
 {
-    internal class Cliente
+    public class Cliente
     {
         string nit;
         string nombre;

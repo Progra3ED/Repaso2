@@ -17,23 +17,47 @@ namespace Repaso2
         public List<Cliente> LeerTxt()
         {
             List<Cliente> clientes = new List<Cliente>();
-            FileStream stream = new FileStream(fileClientes, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(stream);
-
-
-            while (reader.Peek() > -1)
+            if (File.Exists(fileClientes))
             {
-                Cliente cliente = new Cliente();
-                cliente.Nit = reader.ReadLine();
-                cliente.Nombre = reader.ReadLine();
-                cliente.Direccion = reader.ReadLine();
+                FileStream stream = new FileStream(fileClientes, FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(stream);
 
-                clientes.Add(cliente);
 
+                while (reader.Peek() > -1)
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.Nit = reader.ReadLine();
+                    cliente.Nombre = reader.ReadLine();
+                    cliente.Direccion = reader.ReadLine();
+                    cliente.Email = reader.ReadLine();
+                    cliente.Usuario = reader.ReadLine();
+                    cliente.Password = reader.ReadLine();
+
+                    clientes.Add(cliente);
+
+                }
+
+                reader.Close();
+            }
+            return clientes;
+        }
+
+        public void GuardarTxt(List<Cliente> clientes)
+        {
+            FileStream stream = new FileStream(fileClientes, FileMode.Create, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+
+            foreach (var cliente in clientes)
+            {
+                writer.WriteLine(cliente.Nit);
+                writer.WriteLine(cliente.Nombre);
+                writer.WriteLine(cliente.Direccion);
+                writer.WriteLine(cliente.Email);
+                writer.WriteLine(cliente.Usuario);
+                writer.WriteLine(cliente.Password);
             }
 
-            reader.Close();
-            return clientes;
+            writer.Close();
         }
     }
 }
