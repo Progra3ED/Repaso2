@@ -30,6 +30,19 @@ namespace Repaso2
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.labelPasswordCliente = new System.Windows.Forms.Label();
+            this.textBoxPasswordCliente = new System.Windows.Forms.TextBox();
+            this.labelUsuarioCliente = new System.Windows.Forms.Label();
+            this.textBoxUsuarioCliente = new System.Windows.Forms.TextBox();
+            this.labelEmailCliente = new System.Windows.Forms.Label();
+            this.textBoxEmailCliente = new System.Windows.Forms.TextBox();
+            this.labelDireccionCliente = new System.Windows.Forms.Label();
+            this.textBoxDireccionCliente = new System.Windows.Forms.TextBox();
+            this.labelNombreCliente = new System.Windows.Forms.Label();
+            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
+            this.labelNitCliente = new System.Windows.Forms.Label();
+            this.textBoxNitCliente = new System.Windows.Forms.TextBox();
+            this.buttonGuardarCliente = new System.Windows.Forms.Button();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.numericUpDownModelo = new System.Windows.Forms.NumericUpDown();
@@ -45,6 +58,8 @@ namespace Repaso2
             this.textBoxMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonLeerJson = new System.Windows.Forms.Button();
+            this.buttonJson = new System.Windows.Forms.Button();
             this.buttonGuardarAlquiler = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDownKilometros = new System.Windows.Forms.NumericUpDown();
@@ -61,21 +76,6 @@ namespace Repaso2
             this.buttonMasKilometros = new System.Windows.Forms.Button();
             this.buttonReporte = new System.Windows.Forms.Button();
             this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
-            this.buttonJson = new System.Windows.Forms.Button();
-            this.buttonLeerJson = new System.Windows.Forms.Button();
-            this.labelNitCliente = new System.Windows.Forms.Label();
-            this.textBoxNitCliente = new System.Windows.Forms.TextBox();
-            this.labelNombreCliente = new System.Windows.Forms.Label();
-            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
-            this.labelDireccionCliente = new System.Windows.Forms.Label();
-            this.textBoxDireccionCliente = new System.Windows.Forms.TextBox();
-            this.labelEmailCliente = new System.Windows.Forms.Label();
-            this.textBoxEmailCliente = new System.Windows.Forms.TextBox();
-            this.labelUsuarioCliente = new System.Windows.Forms.Label();
-            this.textBoxUsuarioCliente = new System.Windows.Forms.TextBox();
-            this.labelPasswordCliente = new System.Windows.Forms.Label();
-            this.textBoxPasswordCliente = new System.Windows.Forms.TextBox();
-            this.buttonGuardarCliente = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
@@ -131,7 +131,7 @@ namespace Repaso2
             // labelPasswordCliente
             // 
             this.labelPasswordCliente.AutoSize = true;
-            this.labelPasswordCliente.Location = new System.Drawing.Point(20, 230);
+            this.labelPasswordCliente.Location = new System.Drawing.Point(15, 336);
             this.labelPasswordCliente.Name = "labelPasswordCliente";
             this.labelPasswordCliente.Size = new System.Drawing.Size(53, 13);
             this.labelPasswordCliente.TabIndex = 13;
@@ -139,7 +139,7 @@ namespace Repaso2
             // 
             // textBoxPasswordCliente
             // 
-            this.textBoxPasswordCliente.Location = new System.Drawing.Point(100, 227);
+            this.textBoxPasswordCliente.Location = new System.Drawing.Point(95, 333);
             this.textBoxPasswordCliente.Name = "textBoxPasswordCliente";
             this.textBoxPasswordCliente.PasswordChar = '*';
             this.textBoxPasswordCliente.Size = new System.Drawing.Size(200, 20);
@@ -148,7 +148,7 @@ namespace Repaso2
             // labelUsuarioCliente
             // 
             this.labelUsuarioCliente.AutoSize = true;
-            this.labelUsuarioCliente.Location = new System.Drawing.Point(20, 190);
+            this.labelUsuarioCliente.Location = new System.Drawing.Point(15, 296);
             this.labelUsuarioCliente.Name = "labelUsuarioCliente";
             this.labelUsuarioCliente.Size = new System.Drawing.Size(43, 13);
             this.labelUsuarioCliente.TabIndex = 11;
@@ -156,7 +156,7 @@ namespace Repaso2
             // 
             // textBoxUsuarioCliente
             // 
-            this.textBoxUsuarioCliente.Location = new System.Drawing.Point(100, 187);
+            this.textBoxUsuarioCliente.Location = new System.Drawing.Point(95, 293);
             this.textBoxUsuarioCliente.Name = "textBoxUsuarioCliente";
             this.textBoxUsuarioCliente.Size = new System.Drawing.Size(200, 20);
             this.textBoxUsuarioCliente.TabIndex = 10;
@@ -164,7 +164,7 @@ namespace Repaso2
             // labelEmailCliente
             // 
             this.labelEmailCliente.AutoSize = true;
-            this.labelEmailCliente.Location = new System.Drawing.Point(20, 150);
+            this.labelEmailCliente.Location = new System.Drawing.Point(15, 256);
             this.labelEmailCliente.Name = "labelEmailCliente";
             this.labelEmailCliente.Size = new System.Drawing.Size(32, 13);
             this.labelEmailCliente.TabIndex = 9;
@@ -172,7 +172,7 @@ namespace Repaso2
             // 
             // textBoxEmailCliente
             // 
-            this.textBoxEmailCliente.Location = new System.Drawing.Point(100, 147);
+            this.textBoxEmailCliente.Location = new System.Drawing.Point(95, 253);
             this.textBoxEmailCliente.Name = "textBoxEmailCliente";
             this.textBoxEmailCliente.Size = new System.Drawing.Size(200, 20);
             this.textBoxEmailCliente.TabIndex = 8;
@@ -180,7 +180,7 @@ namespace Repaso2
             // labelDireccionCliente
             // 
             this.labelDireccionCliente.AutoSize = true;
-            this.labelDireccionCliente.Location = new System.Drawing.Point(20, 110);
+            this.labelDireccionCliente.Location = new System.Drawing.Point(15, 216);
             this.labelDireccionCliente.Name = "labelDireccionCliente";
             this.labelDireccionCliente.Size = new System.Drawing.Size(52, 13);
             this.labelDireccionCliente.TabIndex = 7;
@@ -188,7 +188,7 @@ namespace Repaso2
             // 
             // textBoxDireccionCliente
             // 
-            this.textBoxDireccionCliente.Location = new System.Drawing.Point(100, 107);
+            this.textBoxDireccionCliente.Location = new System.Drawing.Point(95, 213);
             this.textBoxDireccionCliente.Name = "textBoxDireccionCliente";
             this.textBoxDireccionCliente.Size = new System.Drawing.Size(200, 20);
             this.textBoxDireccionCliente.TabIndex = 6;
@@ -196,7 +196,7 @@ namespace Repaso2
             // labelNombreCliente
             // 
             this.labelNombreCliente.AutoSize = true;
-            this.labelNombreCliente.Location = new System.Drawing.Point(20, 70);
+            this.labelNombreCliente.Location = new System.Drawing.Point(15, 176);
             this.labelNombreCliente.Name = "labelNombreCliente";
             this.labelNombreCliente.Size = new System.Drawing.Size(44, 13);
             this.labelNombreCliente.TabIndex = 5;
@@ -204,7 +204,7 @@ namespace Repaso2
             // 
             // textBoxNombreCliente
             // 
-            this.textBoxNombreCliente.Location = new System.Drawing.Point(100, 67);
+            this.textBoxNombreCliente.Location = new System.Drawing.Point(95, 173);
             this.textBoxNombreCliente.Name = "textBoxNombreCliente";
             this.textBoxNombreCliente.Size = new System.Drawing.Size(200, 20);
             this.textBoxNombreCliente.TabIndex = 4;
@@ -212,22 +212,22 @@ namespace Repaso2
             // labelNitCliente
             // 
             this.labelNitCliente.AutoSize = true;
-            this.labelNitCliente.Location = new System.Drawing.Point(20, 30);
+            this.labelNitCliente.Location = new System.Drawing.Point(15, 136);
             this.labelNitCliente.Name = "labelNitCliente";
-            this.labelNitCliente.Size = new System.Drawing.Size(22, 13);
+            this.labelNitCliente.Size = new System.Drawing.Size(20, 13);
             this.labelNitCliente.TabIndex = 3;
             this.labelNitCliente.Text = "Nit";
             // 
             // textBoxNitCliente
             // 
-            this.textBoxNitCliente.Location = new System.Drawing.Point(100, 27);
+            this.textBoxNitCliente.Location = new System.Drawing.Point(95, 133);
             this.textBoxNitCliente.Name = "textBoxNitCliente";
             this.textBoxNitCliente.Size = new System.Drawing.Size(200, 20);
             this.textBoxNitCliente.TabIndex = 2;
             // 
             // buttonGuardarCliente
             // 
-            this.buttonGuardarCliente.Location = new System.Drawing.Point(100, 270);
+            this.buttonGuardarCliente.Location = new System.Drawing.Point(95, 376);
             this.buttonGuardarCliente.Name = "buttonGuardarCliente";
             this.buttonGuardarCliente.Size = new System.Drawing.Size(120, 40);
             this.buttonGuardarCliente.TabIndex = 1;
@@ -403,6 +403,26 @@ namespace Repaso2
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // buttonLeerJson
+            // 
+            this.buttonLeerJson.Location = new System.Drawing.Point(705, 446);
+            this.buttonLeerJson.Name = "buttonLeerJson";
+            this.buttonLeerJson.Size = new System.Drawing.Size(175, 57);
+            this.buttonLeerJson.TabIndex = 13;
+            this.buttonLeerJson.Text = "Leer Json";
+            this.buttonLeerJson.UseVisualStyleBackColor = true;
+            this.buttonLeerJson.Click += new System.EventHandler(this.buttonLeerJson_Click);
+            // 
+            // buttonJson
+            // 
+            this.buttonJson.Location = new System.Drawing.Point(446, 446);
+            this.buttonJson.Name = "buttonJson";
+            this.buttonJson.Size = new System.Drawing.Size(211, 57);
+            this.buttonJson.TabIndex = 12;
+            this.buttonJson.Text = "Guardar Json";
+            this.buttonJson.UseVisualStyleBackColor = true;
+            this.buttonJson.Click += new System.EventHandler(this.buttonJson_Click);
+            // 
             // buttonGuardarAlquiler
             // 
             this.buttonGuardarAlquiler.Location = new System.Drawing.Point(153, 446);
@@ -542,26 +562,6 @@ namespace Repaso2
             this.dataGridViewReporte.Size = new System.Drawing.Size(655, 433);
             this.dataGridViewReporte.TabIndex = 0;
             // 
-            // buttonJson
-            // 
-            this.buttonJson.Location = new System.Drawing.Point(446, 446);
-            this.buttonJson.Name = "buttonJson";
-            this.buttonJson.Size = new System.Drawing.Size(211, 57);
-            this.buttonJson.TabIndex = 12;
-            this.buttonJson.Text = "Guardar Json";
-            this.buttonJson.UseVisualStyleBackColor = true;
-            this.buttonJson.Click += new System.EventHandler(this.buttonJson_Click);
-            // 
-            // buttonLeerJson
-            // 
-            this.buttonLeerJson.Location = new System.Drawing.Point(705, 446);
-            this.buttonLeerJson.Name = "buttonLeerJson";
-            this.buttonLeerJson.Size = new System.Drawing.Size(175, 57);
-            this.buttonLeerJson.TabIndex = 13;
-            this.buttonLeerJson.Text = "Leer Json";
-            this.buttonLeerJson.UseVisualStyleBackColor = true;
-            this.buttonLeerJson.Click += new System.EventHandler(this.buttonLeerJson_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,6 +573,7 @@ namespace Repaso2
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
